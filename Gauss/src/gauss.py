@@ -25,10 +25,11 @@ def Set():
         s=0
         index=i+1
         while (j<=n):
-            lst.append(float(1)/index)
-            s=s+float(1)/index
             if (j==n):
                 lst.append(s)
+            else:
+                lst.append(float(1)/index)
+                s=s+float(1)/index
             j=j+1
             index=index+1
         Matrix.append(lst)
@@ -98,8 +99,6 @@ def Solve():
 print ("Program for solving SLAE Gauss method")
 flag=True
 while (flag):
-    print("Select the menu item:")
-    print("0. Help")
     print("1. Enter the matrix")
     print("2. Print the matrix")
     print("3. Solve")
@@ -115,11 +114,9 @@ while (flag):
     if (not type(option)):
         print("Number must be Integer")
         continue
-    if ((option<0)or(option>4)):
+    if ((option<1)or(option>4)):
         print("Wrong data")
         continue
-    if (option==0):
-        print("Specify the size of the matrix. Enter a cell array n x n+1, where the column n+1 is column of constant terms.")
     if (option==1):
         Matrix=[]
         b=[]
