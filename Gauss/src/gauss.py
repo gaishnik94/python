@@ -1,6 +1,6 @@
 Matrix=[]
 x=[]
-def Enter():
+def Set():
     global Matrix
     global x
     try:
@@ -22,18 +22,15 @@ def Enter():
     x=[]
     while (i<n):
         lst=[]
+        s=0
+        index=i+1
         while (j<=n):
-            try:
-                lst.append(input("Element["+str(i)+","+str(j)+"]: "))
-                j=j+1
-            except NameError:
-                print("Invalid data")
-                Matrix=[]
-                return  
-            except EOFError:
-                print("Empty data")
-                Matrix=[]
-                return  
+            lst.append(float(1)/index)
+            s=s+float(1)/index
+            if (j==n):
+                lst.append(s)
+            j=j+1
+            index=index+1
         Matrix.append(lst)
         x.append(0)
         i=i+1
@@ -126,7 +123,7 @@ while (flag):
     if (option==1):
         Matrix=[]
         b=[]
-        Enter()
+        Set()
     if (option==2):
         Print()
     if (option==3):
